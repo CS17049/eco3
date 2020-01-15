@@ -1,3 +1,8 @@
+Video 1 - Introduccion
+DOCUMENTACION
+https://www.djangoproject.com
+---------------------------------------------------------------
+
 Pasos
 
 1 Instalar python3

@@ -1,0 +1,72 @@
+COMANDOS COMUNES
+Utilidad de Linea de Comandos de Django - Comandos
+	django-admin startproject NombreSitio .
+	django-admin startapp NombreSitio
+
+Empaquetador de django-admin.py - Comandos
+	Ver NOTA2
+	./manage.py makemigrations
+	./manage.py migrate
+	./manage.py runserver
+	./manage.py createsuperuser
+
+---------------------------------------------------------------
+Aplicacion web --> Proyecto
+Aplicacion de Django --> Aplicacion en Django
+
+11 Crear una app de Django
+creamos una carpeta dentro de nuestra app web llamada apps
+creamos el archivo 
+	__init__.py 
+creamos nuestras app mascota y refugio
+	django-admin startapp NombreApp
+
+__init__.py --> De esta forma Se reconocce que nuestra carpeta app es 
+reconocida como un paquete de python
+
+12 Instalar app de Django
+	settings.py 
+		INSTALED_APPS
+
+13 Configuraciones Basicas
+	settings.py 
+		LANGUAGE_CODE = 'es-es'
+    o
+    LANGUAGE_CODE = 'en-us'
+
+---------------------------------------------------------------
+Configurar URLs y primera view
+(Podemos omitir lo de la primera view)
+
+Creamos nuestra vista en el archivo views.py de la app necesaria
+  FORMA 1 (SOLO PRUEBA)
+  from django.http import HttpResponse    
+  def index(request):
+    return HttpResponse("Soy el Index")
+  FORMA 2
+  def index(request):
+  return render(request, 'mascota/index.html')
+
+Creamos urls.py en las aplicaciones
+Configuramos el archivo url.py de la app
+  from apps.mascota.views import index
+  from django.urls import path
+  urlpatterns = [
+      path('', views.index, name='index'),
+  ]
+
+ Configuramos el archivo url.py GLOBAL
+  from django.contrib import admin
+  from django.urls import path, include
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('mascota/', include('apps.mascota.urls')),
+  ]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+    },
+]
+---------------------------------------------------------------
