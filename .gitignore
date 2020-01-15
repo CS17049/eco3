@@ -1,4 +1,6 @@
-ecommerce/
+ecommerce/bin/
+ecommerce/include/
+ecommerce/lib/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
