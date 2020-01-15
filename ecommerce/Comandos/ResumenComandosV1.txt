@@ -1,0 +1,51 @@
+Pasos
+
+1 Instalar python3
+	sudo apt install python3.6
+
+2 Instalar virtualenv
+	sudo apt-get install python-virtualenv virtualenv
+	o
+	pip install virtualenv
+
+3 Crear un Entorno con python3
+	virtualenv nombreDeEntorno --python=python3
+
+4 Activar nuestro Entorno Virtualenv
+	source bin/activate
+
+5 Desactivar nuestro Entorno Virtualenv
+	deactivate
+
+6 Installar Django
+	Despues del paso 4
+	Nos aseguramos que tenemos la ultima version de pip
+		python3 -m pip install --upgrade pip
+	Instalamos Django
+		pip install django
+	Instalamos 
+		
+	O 
+
+	pip install -r requirements.txt
+
+
+7 Crear un Proyecto de django
+	(El punto es crucial)
+		django-admin startproject NombreSitio .
+
+NOTA2: necesitamos estar en el directorio de CarpetaProyecto que contiene el archivo manage.py
+
+8 Hacer migraciones en Django
+	ver NOTA2
+	python manage.py migrate
+
+9 Iniciar el servidor web en Django
+	Ver NOTA2
+	python manage.py runserver
+	python manage.py runserver 8000
+
+10 Ejecuta en tu navegador
+	127.0.0.1:8000/
+	o
+	localhost:8000/
