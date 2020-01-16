@@ -19,5 +19,5 @@ from apps.producto import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('producto/', include(urls)),
+    path('pro/', include(urls)),
 ]
